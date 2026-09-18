@@ -1,0 +1,31 @@
+- an object can have only 1 owner
+- assignment/initialization either copies or moves the source
+  * if the source doesn't implement the Copy trait, it is moved to the
+    destination, i.e., ownership is transferred from the source to the
+    destination
+  * copy/move can also occur
+    - when passing by value into a function
+    - returning by value from a function
+    - when pattern-matching
+- at any time, an object can have
+  EITHER 1 exclusive/mutable reference (&mut) to it
+  OR     any number of shared references (&) to it
+- we need to be aware of the scope of a reference: it starts from its
+  introduction up to and including the last time it is used (i.e., scope
+  of a reference is not lexical)
+- if an object has any reference to it, it cannot be written to
+- if an object has a exclusive reference to it, it cannot be read or written
+  (the object is "frozen")
+
+Copy trait:
+- an array is Copy (i.e. implements the Copy trait) if its elements are Copy
+- a tuple is Copy if its elements are Copy
+
+Basics:
+  let a = ...;
+  &a (OK), &mut a (NOT OK, a is not declared mut)
+  let mut a = ...;
+  &a, &mut a (BOTH OK, but not at the same time)
+
+  let a = ...;  // some type that doesn't implement Copy
+  let b = a;    // a is moved to b
