@@ -32,3 +32,10 @@ cargo new lectures/03 --name lec03
 cargo new labs/01 --name lab01
 cargo new labs/02 --name lab02
 ```
+
+## wasm stuff
+```
+cargo install wasm-pack
+wasm-pack new {name}
+wasm-pack build --target web
+```
