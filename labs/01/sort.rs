@@ -22,9 +22,8 @@ fn main() {
     };
 
     let mut records: Vec<(String, String, u8)> = input.lines().filter_map(record).collect();
-    records.sort();
+    records.sort_by(|a, b| (a.2, &a.1, &a.0).cmp(&(b.2, &b.1, &b.0)));
     records.dedup();
-    records.sort_by_key(|r| r.2);
 
     for (first_name, last_name, score) in records {
         println!("{} {}, {}", score, last_name, first_name);
