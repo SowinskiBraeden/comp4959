@@ -39,3 +39,17 @@ cargo install wasm-pack
 wasm-pack new {name}
 wasm-pack build --target web
 ```
+
+
+## Phoenix Framework
+```
+# no database
+mix phx.new hello --no-ecto
+# can be --no-html --no-mailer --no-assets
+
+iex -S mix phx.server # run in interactive shell
+
+mix phx.routes # routes
+
+/dev/dashboard/home # view phoenix framework dashboard when running
+```
