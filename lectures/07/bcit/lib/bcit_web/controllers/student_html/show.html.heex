@@ -1,0 +1,21 @@
+<Layouts.app flash={@flash}>
+  <.header>
+    Student {@student.id}
+    <:subtitle>This is a student record from your database.</:subtitle>
+    <:actions>
+      <.button navigate={~p"/students"}>
+        <.icon name="hero-arrow-left" />
+      </.button>
+      <.button variant="primary" navigate={~p"/students/#{@student}/edit?return_to=show"}>
+        <.icon name="hero-pencil-square" /> Edit student
+      </.button>
+    </:actions>
+  </.header>
+
+  <.list>
+    <:item title="Student ID">{@student.sid}</:item>
+    <:item title="First Name">{@student.firstname}</:item>
+    <:item title="Last Name">{@student.lastname}</:item>
+    <:item title="GPA">{@student.gpa}</:item>
+  </.list>
+</Layouts.app>

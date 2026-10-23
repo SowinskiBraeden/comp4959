@@ -1,0 +1,10 @@
+<.form :let={f} for={@changeset} action={@action}>
+  <.input field={f[:sid]} type="text" label="Sid" />
+  <.input field={f[:firstname]} type="text" label="Firstname" />
+  <.input field={f[:lastname]} type="text" label="Lastname" />
+  <.input field={f[:gpa]} type="number" label="Gpa" step="any" />
+  <footer>
+    <.button variant="primary">Save Student</.button>
+    <.button :if={@return_to} href={@return_to}>Cancel</.button>
+  </footer>
+</.form>

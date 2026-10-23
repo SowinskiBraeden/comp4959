@@ -1,0 +1,8 @@
+<Layouts.app flash={@flash}>
+  <.header>
+    New Student
+    <:subtitle>Use this form to manage student records in your database.</:subtitle>
+  </.header>
+
+  <.student_form changeset={@changeset} action={~p"/students"} return_to={~p"/students"} />
+</Layouts.app>
