@@ -1,5 +1,9 @@
 use std::collections::HashMap;
 
+/*
+ * Sieve of Eratosthenes: but tail recursive
+ */
+
 fn sieve(p: Vec<usize>, mut acc: Vec<usize>, n: usize) -> Vec<usize> {
     if p.len() == 0 {
         return acc;
